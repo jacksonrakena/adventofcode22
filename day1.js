@@ -2238,6 +2238,11 @@ const input = `5118
 
 let elf = 1;
 let elves = [];
+let nums = input
+  .split("\n\n")
+  .map((d) => d.split("\n").reduce((a, b) => a + Number.parseInt(b), 0))
+  .sort((a, b) => b - a)[0];
+console.log(nums);
 for (var line of input.split("\n")) {
   if (line) {
     elves[elf] = elves[elf]
